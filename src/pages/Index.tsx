@@ -296,7 +296,7 @@ const Index = () => {
                 <div className="w-80 h-80 bg-gradient-primary rounded-full animate-float shadow-elegant"></div>
                 <div className="absolute inset-0 flex items-center justify-center p-6">
                   <img 
-                    src="/src/assets/profile-photo.jpg" 
+                    src="/lovable-uploads/3bf04bca-1644-4812-ade0-ca5fe9d728c2.png" 
                     alt="Omar Mohamed Omar"
                     className="w-72 h-72 rounded-full object-cover shadow-elegant border-4 border-background hover:scale-105 transition-transform duration-300"
                   />
