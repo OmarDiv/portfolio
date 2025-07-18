@@ -112,7 +112,7 @@ const Index = () => {
       description: "Built a backend system for food delivery and restaurant management with secure RESTful APIs and automated documentation. Improved performance and reliability with optimized data access, caching, and background jobs.",
       technologies: ["ASP.NET Core", "Web API", "EF Core", "SQL Server", "LINQ", "Identity", "JWT", "Repository Pattern", "Unit of Work", "Clean Architecture", "Hangfire", "Serilog"],
       featured: true,
-      github: "#",
+      github: "https://github.com/OmarDiv/FoodFlow",
       demo: "#"
     },
     {
@@ -120,15 +120,23 @@ const Index = () => {
       description: "Graduation project: A smart parking system integrated with hardware that helps users find, book, and access parking spots easily while managing reservations and user accounts.",
       technologies: ["ASP.NET Core", "SQL Server", "Hardware Integration", "Real-time Systems"],
       featured: true,
-      github: "#",
+      github: "https://github.com/OmarDiv/Raknah",
       demo: "#"
     },
     {
-      name: "BookSky",
-      description: "Developed a platform for creating and analyzing surveys with automated notifications. Enhanced performance using query optimization through stored procedures and task-based validation.",
+      name: "Bookify",
+      description: "A comprehensive book management system built with ASP.NET Core, featuring user authentication, book catalog management, and review system.",
       technologies: ["ASP.NET Core", "SQL Server", "Identity Framework", "JWT Authentication", "Repository Pattern", "FluentValidation", "Mapper Extensions", "Clean Architecture", "Bootstrap"],
       featured: false,
-      github: "#",
+      github: "https://github.com/OmarDiv/Bookify",
+      demo: "#"
+    },
+    {
+      name: "ServyBasket",
+      description: "Survey management platform for creating, distributing, and analyzing surveys with real-time analytics and reporting features. Enhanced performance using query optimization through stored procedures and task-based validation.",
+      technologies: ["ASP.NET Core", "SQL Server", "Entity Framework", "JWT Authentication", "Repository Pattern", "FluentValidation", "Clean Architecture", "Chart.js"],
+      featured: false,
+      github: "https://github.com/OmarDiv/SurveyBasket",
       demo: "#"
     }
   ];
@@ -150,7 +158,7 @@ const Index = () => {
 
   const stats = [
     { number: "1+", label: "Years Experience", icon: Briefcase },
-    { number: "3+", label: "Projects Completed", icon: Trophy },
+    { number: "4+", label: "Projects Completed", icon: Trophy },
     { number: "15+", label: "Technologies", icon: Code },
     { number: "100%", label: "Success Rate", icon: Target }
   ];
@@ -286,10 +294,12 @@ const Index = () => {
             <div className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center scroll-reveal">
               <div className="relative">
                 <div className="w-80 h-80 bg-gradient-primary rounded-full animate-float shadow-elegant"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-72 h-72 bg-muted rounded-full flex items-center justify-center shadow-lg">
-                    <div className="text-6xl font-bold text-primary">OM</div>
-                  </div>
+                <div className="absolute inset-0 flex items-center justify-center p-6">
+                  <img 
+                    src="/src/assets/profile-photo.jpg" 
+                    alt="Omar Mohamed Omar"
+                    className="w-72 h-72 rounded-full object-cover shadow-elegant border-4 border-background hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
             </div>
@@ -484,11 +494,11 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" onClick={() => window.open(project.github, '_blank')}>
                         <Github className="h-4 w-4 mr-1" />
                         Code
                       </Button>
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm" onClick={() => window.open(project.demo, '_blank')}>
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Demo
                       </Button>
