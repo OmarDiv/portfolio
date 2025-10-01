@@ -3,269 +3,1142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omar Mohamed Omar | .NET Developer Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+  <meta name="description" content="Omar Mohamed - .NET Backend Developer with 1+ year experience in ASP.NET Core, Clean Architecture, and modern development practices">
+  <meta name="keywords" content=".NET Developer, ASP.NET Core, Backend Developer, Egypt, Omar Mohamed">
+  <title>Omar Mohamed | .NET Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #1a1d35;
+      --accent-blue: #00d4ff;
+      --accent-purple: #b37feb;
+      --text-primary: #ffffff;
+      --text-secondary: #a8b2d1;
+      --card-bg: rgba(26, 29, 53, 0.8);
+      --shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-blue);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--accent-blue);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    .hero-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid var(--accent-blue);
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+      object-fit: cover;
+      animation: float 3s ease-in-out infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-img-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      opacity: 0.2;
+      animation: pulse 2s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .subtitle {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .typing-text {
+      font-family: 'Fira Code', monospace;
+      color: var(--accent-blue);
+      font-size: 1.2rem;
+      min-height: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      width: 50px;
+      height: 50px;
+      background: var(--card-bg);
+      border: 2px solid var(--accent-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-blue);
+      font-size: 1.3rem;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--accent-blue);
+      color: var(--bg-primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s;
+      margin: 0.5rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-blue);
+      color: white;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    .about-content {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      transition: all 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent-blue);
+    }
+
+    .skill-category h3 {
+      color: var(--accent-blue);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .skill-tag {
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--accent-blue);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      background: var(--accent-blue);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+      border-color: var(--accent-blue);
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-icon {
+      font-size: 3rem;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-badge {
+      background: rgba(179, 127, 235, 0.1);
+      color: var(--accent-purple);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      border: 1px solid rgba(179, 127, 235, 0.3);
+    }
+
+    /* Experience Section */
+    .timeline {
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3rem;
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -3.5rem;
+      top: 2rem;
+      width: 15px;
+      height: 15px;
+      background: var(--accent-blue);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+
+    .timeline-item h3 {
+      color: var(--accent-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item .date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .timeline-item ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline-item ul li {
+      color: var(--text-secondary);
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-item ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--accent-blue);
+    }
+
+    /* Contact Section */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--accent-blue);
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      background: var(--bg-primary);
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent-blue);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      margin-top: 5rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    footer a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--accent-purple);
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: var(--accent-blue);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 999;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 14, 39, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.3s;
+        backdrop-filter: blur(10px);
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.2rem;
+      }
+
+      .hero-img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .hero-img-wrapper::before {
+        width: 180px;
+        height: 180px;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline {
+        padding-left: 2rem;
+      }
+
+      .timeline-item .date {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .about-content,
+      .contact-form {
+        padding: 2rem;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero text-white text-center py-5 position-relative bg-primary-custom">
-    <div class="container position-relative z-2">
-      <div class="profile-card mx-auto mb-4 p-4 rounded shadow-lg">
-        <img src="WhatsApp Image 2025-07-04 at 00.25.00_2d9f0397.jpg" alt="Omar Mohamed Omar" class="mb-3 rounded-circle border border-4" width="140">
-        <h1 class="display-4 fw-bold animate-fade-in">Omar Mohamed Omar</h1>
-        <p class="lead animate-slide-up">.NET Developer</p>
-        <div class="mb-3 animate-fade-in">
-          <a href="mailto:omaar88mohamed@gmail.com" class="text-accent mx-2 fs-4"><i class="fas fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/omar-mohamed-713b53265" class="text-accent mx-2 fs-4"><i class="fab fa-linkedin"></i></a>
-          <a href="https://wa.me/01013762770" class="text-accent mx-2 fs-4"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://facebook.com/xban.ger.98" class="text-accent mx-2 fs-4"><i class="fab fa-facebook"></i></a>
-        </div>
-        <a href="https://drive.google.com/file/d/1YjDJA3m-sr-3k2EIvOdeIiQ2qgMpNgJl/view" class="btn btn-primary animate-slide-up" target="_blank"><i class="fas fa-file-pdf"></i> View CV</a>
-      </div>
-    </div>
-    <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
-  </section>
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
 
-  <!-- About Section -->
-  <section class="about py-5 bg-light-custom animate-fade-in" id="about">
-    <div class="container">
-      <h2 class="mb-4 text-primary-custom"><i class="fas fa-user"></i> About Me</h2>
-      <p class="fs-5">Backend developer with 1+ year of experience in building scalable and maintainable web applications across different domains. Skilled in writing clean code, optimizing performance, securing data, and delivering effective solutions that align with real business needs.</p>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="skills bg-white py-5 animate-fade-in" id="skills">
-    <div class="container">
-      <h2 class="mb-4 text-accent"><i class="fas fa-cogs"></i> Skills</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <h5 class="text-primary-custom">Technical Skills</h5>
-          <div class="d-flex flex-wrap gap-2 mb-3">
-            <span class="badge bg-primary">ASP.NET Core</span>
-            <span class="badge bg-primary">MVC</span>
-            <span class="badge bg-primary">Web API</span>
-            <span class="badge bg-primary">C#</span>
-            <span class="badge bg-primary">SQL</span>
-            <span class="badge bg-primary">Entity Framework</span>
-            <span class="badge bg-primary">LINQ</span>
-            <span class="badge bg-primary">Dapper</span>
-            <span class="badge bg-primary">MS SQL Server</span>
-            <span class="badge bg-primary">MySQL</span>
-            <span class="badge bg-primary">HTML</span>
-            <span class="badge bg-primary">CSS</span>
-            <span class="badge bg-primary">Bootstrap</span>
-            <span class="badge bg-primary">jQuery</span>
-          </div>
-          <div class="mb-3">
-            <label>Backend Development</label>
-            <div class="progress mb-2"><div class="progress-bar" style="width: 95%">95%</div></div>
-            <label>Database & Data Access</label>
-            <div class="progress mb-2"><div class="progress-bar" style="width: 90%">90%</div></div>
-            <label>Frontend & Integration</label>
-            <div class="progress mb-2"><div class="progress-bar" style="width: 80%">80%</div></div>
-            <label>Testing & Tools</label>
-            <div class="progress mb-2"><div class="progress-bar" style="width: 75%">75%</div></div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <h5 class="text-primary-custom">Soft Skills</h5>
-          <ul class="list-group list-group-flush mb-3">
-            <li class="list-group-item">Problem Solving</li>
-            <li class="list-group-item">Teamwork</li>
-            <li class="list-group-item">Communication</li>
-            <li class="list-group-item">Time Management</li>
-            <li class="list-group-item">Adaptability</li>
-          </ul>
-          <h5 class="text-primary-custom">Languages</h5>
-          <span class="badge bg-accent">Arabic (Native)</span>
-          <span class="badge bg-accent">English (Good)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certificates Section -->
-  <section class="certificates py-5 bg-light-custom animate-fade-in" id="certificates">
-    <div class="container">
-      <h2 class="mb-4 text-primary-custom"><i class="fas fa-certificate"></i> Certificates</h2>
-      <ul class="fs-5">
-        <li><b>ITI Summer Training 2023</b> - Web Development using Asp .NET Core
-          <ul>
-            <li>SQL Server</li>
-            <li>C#</li>
-            <li>LINQ & EF Core</li>
-            <li>Asp .NET Core MVC</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section class="experience bg-white py-5 animate-fade-in" id="experience">
-    <div class="container">
-      <h2 class="mb-4 text-accent"><i class="fas fa-briefcase"></i> Work Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fas fa-building"></i></div>
-          <div class="timeline-content">
-            <h5 class="text-primary-custom">Full Stack .NET Developer <span class="text-muted">@ ITS Technologies</span></h5>
-            <p class="mb-1"><i class="fas fa-map-marker-alt"></i> Port Said, Egypt | <i class="fas fa-calendar-alt"></i> Present</p>
-            <ul>
-              <li>Built APIs for mobile integration and managed logistics/tracking platforms.</li>
-              <li>Developed a technical support website for ITS Technologies to solve problems and enable real-time chat.</li>
-              <li>Developed a container transport management system for tracking shipments and generating reports.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section class="projects py-5 bg-light-custom animate-fade-in" id="projects">
-    <div class="container">
-      <h2 class="mb-4 text-primary-custom"><i class="fas fa-project-diagram"></i> Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100 shadow project-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2"><i class="fas fa-utensils fa-2x text-accent me-2"></i><h5 class="card-title mb-0 text-primary-custom">FoodFlow</h5></div>
-              <p class="card-text">Backend system for food delivery and restaurant management with secure RESTful APIs, authentication, and automated documentation. Optimized data access, caching, and background jobs.</p>
-              <div class="d-flex flex-wrap gap-1">
-                <span class="badge bg-primary">ASP.NET Core</span>
-                <span class="badge bg-primary">Web API</span>
-                <span class="badge bg-primary">EF Core</span>
-                <span class="badge bg-primary">SQL Server</span>
-                <span class="badge bg-primary">JWT</span>
-                <span class="badge bg-primary">Hangfire</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 shadow project-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2"><i class="fas fa-parking fa-2x text-accent me-2"></i><h5 class="card-title mb-0 text-primary-custom">Raknah (Smart Parking System)</h5></div>
-              <p class="card-text">Smart parking system with real-time reservations, hardware integration, and automated notifications. Secure authentication and seamless user experience.</p>
-              <div class="d-flex flex-wrap gap-1">
-                <span class="badge bg-primary">ASP.NET Core</span>
-                <span class="badge bg-primary">EF Core</span>
-                <span class="badge bg-primary">SQL Server</span>
-                <span class="badge bg-primary">JWT</span>
-                <span class="badge bg-primary">Hangfire</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 shadow project-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2"><i class="fas fa-poll fa-2x text-accent me-2"></i><h5 class="card-title mb-0 text-primary-custom">Survey Basket</h5></div>
-              <p class="card-text">Survey platform for creating and analyzing surveys with automated notifications, role-based authentication, and performance optimization.</p>
-              <div class="d-flex flex-wrap gap-1">
-                <span class="badge bg-primary">ASP.NET Core</span>
-                <span class="badge bg-primary">Web API</span>
-                <span class="badge bg-primary">EF Core</span>
-                <span class="badge bg-primary">SQL Server</span>
-                <span class="badge bg-primary">JWT</span>
-                <span class="badge bg-primary">Hangfire</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 shadow project-card">
-            <div class="card-body">
-              <div class="d-flex align-items-center mb-2"><i class="fas fa-book fa-2x text-accent me-2"></i><h5 class="card-title mb-0 text-primary-custom">Bookify (Library Management System)</h5></div>
-              <p class="card-text">Digital library management system with secure authentication, localization, reporting, and automated notifications for rental expiration.</p>
-              <div class="d-flex flex-wrap gap-1">
-                <span class="badge bg-primary">ASP.NET Core</span>
-                <span class="badge bg-primary">MVC</span>
-                <span class="badge bg-primary">EF Core</span>
-                <span class="badge bg-primary">SQL Server</span>
-                <span class="badge bg-primary">JWT</span>
-                <span class="badge bg-primary">Hangfire</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section class="education bg-white py-5 animate-fade-in" id="education">
-    <div class="container">
-      <h2 class="mb-4 text-accent"><i class="fas fa-graduation-cap"></i> Education</h2>
-      <div>
-        <h5 class="text-primary-custom">Bachelor's Degree in Information Technology and Systems</h5>
-        <p class="mb-1"><i class="fas fa-map-marker-alt"></i> Port Said, Egypt | <i class="fas fa-calendar-alt"></i> 2021 – 2025</p>
-        <ul>
-          <li>Graduated with a <b>Very Good</b> overall grade.</li>
-          <li><b>Graduation Project – Raknah:</b> Smart parking system integrated with hardware for easy parking spot management and reservations.</li>
+  <div class="content-wrapper">
+    <!-- Navigation -->
+    <nav>
+      <div class="container">
+        <div class="logo">Omar.dev</div>
+        <ul id="nav-menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="mobile-menu" id="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Contact Section -->
-  <section class="contact py-5 bg-light-custom animate-fade-in" id="contact">
-    <div class="container">
-      <h2 class="mb-4 text-primary-custom"><i class="fas fa-paper-plane"></i> Contact</h2>
-      <form action="mailto:omaar88mohamed@gmail.com" method="post" enctype="text/plain" class="contact-form p-4 rounded shadow-lg">
-        <div class="row g-3">
-          <div class="col-md-6">
-            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content fade-in">
+        <div class="hero-img-wrapper">
+          <img src="WhatsApp Image 2025-07-04 at 00.25.00_2d9f0397.jpg" alt="Omar Mohamed" class="hero-img">
+        </div>
+        <h1>Omar Mohamed Omar</h1>
+        <p class="subtitle">.NET Backend Developer</p>
+        <div class="typing-text" id="typing-text"></div>
+        
+        <div class="social-links">
+          <a href="https://github.com/OmarDiv" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:omaar88mohamed@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/01013762770" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
+        <div>
+          <a href="https://drive.google.com/file/d/1YjDJA3m-sr-3k2EIvOdeIiQ2qgMpNgJl/view" class="btn" target="_blank">
+            <i class="fas fa-download"></i> Download CV
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-paper-plane"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content fade-in">
+        <p>
+          I'm a passionate .NET Backend Developer with over 1 year of hands-on experience building scalable, 
+          maintainable web applications. I specialize in ASP.NET Core, Clean Architecture, and modern development 
+          practices that deliver real business value.
+        </p>
+        <p>
+          Currently working at ITS Technologies, I've developed production-ready systems across various domains 
+          including food delivery, smart parking, survey management, and digital libraries. I'm dedicated to 
+          writing clean code, optimizing performance, and implementing security best practices.
+        </p>
+        <p>
+          I graduated with distinction from Port Said University with a degree in Information Technology and Systems. 
+          My passion for continuous learning drives me to stay updated with the latest technologies and best practices 
+          in software development.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-code"></i> Backend Development</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">ASP.NET Core</span>
+            <span class="skill-tag">ASP.NET MVC</span>
+            <span class="skill-tag">Web API</span>
+            <span class="skill-tag">RESTful APIs</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Clean Architecture</span>
           </div>
-          <div class="col-md-6">
-            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-database"></i> Data & Databases</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Entity Framework Core</span>
+            <span class="skill-tag">LINQ</span>
+            <span class="skill-tag">Dapper</span>
+            <span class="skill-tag">MS SQL Server</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">ADO.NET</span>
           </div>
         </div>
-        <div class="mt-3">
-          <textarea class="form-control" name="message" rows="4" placeholder="Your Message" required></textarea>
-        </div>
-        <div class="mt-3 text-end">
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </div>
-      </form>
-    </div>
-  </section>
 
-  <footer class="text-white text-center py-3 mt-4 animate-fade-in bg-primary-custom">
-    <div class="container">
-      <small>&copy; 2024 Omar Mohamed Omar. All rights reserved.</small>
-    </div>
-  </footer>
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-shield-alt"></i> Security & Auth</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Identity Framework</span>
+            <span class="skill-tag">JWT</span>
+            <span class="skill-tag">OAuth</span>
+            <span class="skill-tag">Authorization</span>
+            <span class="skill-tag">Data Protection</span>
+          </div>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-tools"></i> Tools & DevOps</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Azure DevOps</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Swagger</span>
+            <span class="skill-tag">Postman</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-puzzle-piece"></i> Patterns & Practices</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">SOLID Principles</span>
+            <span class="skill-tag">Design Patterns</span>
+            <span class="skill-tag">Repository Pattern</span>
+            <span class="skill-tag">Unit of Work</span>
+            <span class="skill-tag">Dependency Injection</span>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in">
+          <h3><i class="fas fa-rocket"></i> Additional Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Hangfire</span>
+            <span class="skill-tag">Serilog</span>
+            <span class="skill-tag">AutoMapper</span>
+            <span class="skill-tag">FluentValidation</span>
+            <span class="skill-tag">xUnit Testing</span>
+            <span class="skill-tag">Caching</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-utensils"></i></div>
+          <h3>FoodFlow</h3>
+          <p>
+            Comprehensive backend system for food delivery and restaurant management. Features secure RESTful APIs, 
+            JWT authentication, automated workflows with Hangfire, and optimized data access with caching strategies.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">Swagger</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-parking"></i></div>
+          <h3>Raknah</h3>
+          <p>
+            Smart parking system with IoT integration. Real-time parking spot reservations, hardware communication, 
+            automated email notifications, and secure user management. My graduation project that earned distinction.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">IoT Integration</span>
+            <span class="tech-badge">MailKit</span>
+            <span class="tech-badge">Rate Limiting</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-poll"></i></div>
+          <h3>Survey Basket</h3>
+          <p>
+            Survey management platform for creating, distributing, and analyzing surveys. Role-based authentication, 
+            automated notifications, query optimization, and comprehensive analytics dashboard.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">Identity</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">Mapster</span>
+            <span class="tech-badge">FluentValidation</span>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-book"></i></div>
+          <h3>Bookify</h3>
+          <p>
+            Digital library management system with multilingual support, automated rental notifications, 
+            comprehensive reporting with ClosedXML, and cloud-based file storage using Cloudinary.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET MVC</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">Clean Architecture</span>
+            <span class="tech-badge">Cloudinary</span>
+            <span class="tech-badge">ClosedXML</span>
+            <span class="tech-badge">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <h3>Full Stack .NET Developer</h3>
+          <div class="date">
+            <span><i class="fas fa-building"></i> ITS Technologies</span>
+            <span><i class="fas fa-calendar"></i> Sep 2024 - Present</span>
+            <span><i class="fas fa-map-marker-alt"></i> Port Said, Egypt</span>
+          </div>
+          <ul>
+            <li>Developed scalable web applications and RESTful APIs using ASP.NET Core and .NET Core MVC</li>
+            <li>Built technical support website with real-time chat functionality for customer service</li>
+            <li>Created APIs for mobile integration, improving accessibility and user experience</li>
+            <li>Developed container transport management system for tracking shipments and generating reports</li>
+            <li>Implemented responsive UIs using HTML, CSS, and Bootstrap</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Get In Touch</h2>
+      <div class="contact-form fade-in">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Omar Mohamed Omar. Built with passion and code.</p>
+      <p>
+        <a href="https://github.com/OmarDiv" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:omaar88mohamed@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" id="scroll-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </div>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  
   <script>
-    // Smooth scroll for nav links (if you add a navbar)
+    // Particles.js configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#00d4ff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: false },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#00d4ff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        }
+      },
+      retina_detect: true
+    });
+
+    // Typing animation
+    const typingText = document.getElementById('typing-text');
+    const phrases = [
+      'Building Scalable APIs...',
+      'Clean Architecture Enthusiast',
+      'ASP.NET Core Developer',
+      'Problem Solver'
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeEffect() {
+      const currentPhrase = phrases[phraseIndex];
+      
+      if (isDeleting) {
+        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+        charIndex++;
+      }
+
+      if (!isDeleting && charIndex === currentPhrase.length) {
+        setTimeout(() => isDeleting = true, 2000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      const typingSpeed = isDeleting ? 50 : 100;
+      setTimeout(typeEffect, typingSpeed);
+    }
+
+    typeEffect();
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          document.getElementById('nav-menu').classList.remove('active');
+          const icon = document.querySelector('.mobile-menu i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
       });
     });
-    // Fade-in animation on scroll
-    const faders = document.querySelectorAll('.animate-fade-in');
-    const appearOptions = { threshold: 0.1 };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+
+    // Mobile menu toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    mobileMenu.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const icon = mobileMenu.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scroll-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('visible');
+      } else {
+        scrollTopBtn.classList.remove('visible');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('fade-in-visible');
-        observer.unobserve(entry.target);
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
       });
-    }, appearOptions);
-    faders.forEach(fader => { appearOnScroll.observe(fader); });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(el);
+    });
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Create mailto link
+      const mailtoLink = `mailto:omaar88mohamed@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      alert('Opening your email client... Thank you for reaching out!');
+      contactForm.reset();
+    });
+
+    // Add active state to nav items on scroll
+    const sections = document.querySelectorAll('section[id]');
+    
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      
+      sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          document.querySelectorAll('nav ul li a').forEach(link => {
+            link.style.color = 'var(--text-secondary)';
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.style.color = 'var(--accent-blue)';
+            }
+          });
+        }
+      });
+    });
   </script>
 </body>
 </html>
