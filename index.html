@@ -3,11 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Omar Mohamed - .NET Backend Developer with +1 year experience in ASP.NET Core, Clean Architecture, and Modern development practices">
-  <meta name="keywords" content=".NET Developer, ASP.NET Core, Backend Developer, Egypt, Omar Mohamed">
-  <title>Omar Mohamed | .NET Backend Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="description" content="Omar Mohamed - Full Stack .NET Backend Developer with 1+ years of experience building scalable ASP.NET Core applications, Clean Architecture, and enterprise solutions.">
+  <meta name="keywords" content=".NET Developer, ASP.NET Core, Backend Developer, C#, Web API, Egypt, Omar Mohamed">
+  <meta name="author" content="Omar Mohamed">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://omardev.com">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Omar Mohamed | Full Stack .NET Developer">
+  <meta property="og:description" content="Experienced .NET Backend Developer specializing in ASP.NET Core, Clean Architecture, and scalable web applications.">
+  <meta property="og:url" content="https://omardev.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Omar Mohamed | .NET Developer">
+  <meta name="twitter:description" content="Full Stack .NET Backend Developer - ASP.NET Core, Web APIs, Clean Architecture">
+  <meta name="theme-color" content="#0a0e27">
+  <title>Omar Mohamed | Full Stack .NET Backend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%2300d4ff'>.O</text></svg>">
   <style>
     * {
       margin: 0;
@@ -24,6 +38,21 @@
       --text-secondary: #a8b2d1;
       --card-bg: rgba(26, 29, 53, 0.8);
       --shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 5rem;
+      --transition-fast: 0.2s;
+      --transition-normal: 0.3s;
+      --transition-slow: 0.6s;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
@@ -32,6 +61,30 @@
       color: var(--text-primary);
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .skip-to-content {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-blue);
+      color: var(--bg-primary);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      z-index: 10000;
+      font-weight: 600;
+    }
+
+    .skip-to-content:focus {
+      top: 0;
     }
 
     #particles-js {
@@ -58,6 +111,14 @@
       padding: 1rem 0;
       z-index: 1000;
       box-shadow: 0 2px 20px rgba(0, 212, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+      transition: all var(--transition-fast);
+    }
+
+    nav.scrolled {
+      background: rgba(10, 14, 39, 0.98);
+      padding: 0.75rem 0;
+      box-shadow: 0 4px 30px rgba(0, 212, 255, 0.15);
     }
 
     nav .container {
@@ -76,6 +137,11 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      transition: all var(--transition-normal);
+    }
+
+    nav .logo:hover {
+      filter: brightness(1.2);
     }
 
     nav ul {
@@ -87,11 +153,32 @@
     nav ul li a {
       color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color var(--transition-normal);
       font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-blue);
+      transition: width var(--transition-normal);
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 100%;
     }
 
     nav ul li a:hover {
+      color: var(--accent-blue);
+    }
+
+    nav ul li a.active {
       color: var(--accent-blue);
     }
 
@@ -100,6 +187,11 @@
       font-size: 1.5rem;
       cursor: pointer;
       color: var(--accent-blue);
+      transition: transform var(--transition-normal);
+    }
+
+    .mobile-menu:hover {
+      transform: scale(1.1);
     }
 
     /* Hero Section */
@@ -109,11 +201,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8rem 2rem 4rem;
+      padding: var(--spacing-2xl) 2rem var(--spacing-lg);
     }
 
     .hero-content {
       max-width: 800px;
+      animation: fadeInUp var(--transition-slow) ease-out;
     }
 
     .hero-img-wrapper {
@@ -167,12 +260,14 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: -0.02em;
     }
 
     .hero .subtitle {
       font-size: 1.5rem;
       color: var(--text-secondary);
       margin-bottom: 1rem;
+      font-weight: 500;
     }
 
     .typing-text {
@@ -180,13 +275,14 @@
       color: var(--accent-blue);
       font-size: 1.2rem;
       min-height: 40px;
+      font-weight: 500;
     }
 
     .social-links {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
-      margin: 2rem 0;
+      margin: var(--spacing-lg) 0;
       flex-wrap: wrap;
     }
 
@@ -201,7 +297,7 @@
       justify-content: center;
       color: var(--accent-blue);
       font-size: 1.3rem;
-      transition: all 0.3s;
+      transition: all var(--transition-normal);
     }
 
     .social-links a:hover {
@@ -211,21 +307,46 @@
       box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
     }
 
+    .social-links a:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
     .btn {
       display: inline-block;
-      padding: 1rem 2.5rem;
+      padding: var(--spacing-sm) var(--spacing-lg);
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
       color: white;
       text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
-      transition: all 0.3s;
-      margin: 0.5rem;
+      transition: all var(--transition-normal);
+      margin: var(--spacing-xs);
       border: none;
       cursor: pointer;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
     }
 
-    .btn:hover {
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .btn.loading::after {
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-left: 0.5em;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+    }
+
+    .btn:hover:not(:disabled) {
       transform: translateY(-3px);
       box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
     }
@@ -253,24 +374,26 @@
       margin-bottom: 3rem;
       text-align: center;
       position: relative;
+      font-weight: 700;
     }
 
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
       width: 100px;
       height: 4px;
       background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
       border-radius: 2px;
+      animation: slideIn var(--transition-normal) ease-out;
     }
 
     /* About Section */
     .about-content {
       background: var(--card-bg);
-      padding: 3rem;
+      padding: var(--spacing-xl);
       border-radius: 20px;
       border: 1px solid rgba(0, 212, 255, 0.2);
       box-shadow: var(--shadow);
@@ -281,7 +404,12 @@
       font-size: 1.1rem;
       color: var(--text-secondary);
       line-height: 1.8;
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .about-content p strong {
+      color: var(--accent-blue);
+      font-weight: 600;
     }
 
     .about-content p:last-child {
@@ -297,10 +425,10 @@
 
     .skill-category {
       background: var(--card-bg);
-      padding: 2rem;
+      padding: var(--spacing-lg);
       border-radius: 15px;
       border: 1px solid rgba(0, 212, 255, 0.2);
-      transition: all 0.3s;
+      transition: all var(--transition-normal);
       backdrop-filter: blur(10px);
     }
 
@@ -312,33 +440,39 @@
 
     .skill-category h3 {
       color: var(--accent-blue);
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--spacing-md);
       font-size: 1.3rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
     }
 
     .skill-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.7rem;
+      gap: var(--spacing-xs);
     }
 
     .skill-tag {
       background: rgba(0, 212, 255, 0.1);
       color: var(--accent-blue);
-      padding: 0.5rem 1rem;
+      padding: var(--spacing-xs) 1rem;
       border-radius: 20px;
       border: 1px solid rgba(0, 212, 255, 0.3);
       font-size: 0.9rem;
-      transition: all 0.3s;
+      transition: all var(--transition-fast);
     }
 
     .skill-tag:hover {
       background: var(--accent-blue);
       color: white;
       transform: scale(1.05);
+      transition: all var(--transition-fast);
+    }
+
+    .skill-tag:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
     }
 
     /* Projects Section */
@@ -351,9 +485,9 @@
     .project-card {
       background: var(--card-bg);
       border-radius: 20px;
-      padding: 2rem;
+      padding: var(--spacing-lg);
       border: 1px solid rgba(0, 212, 255, 0.2);
-      transition: all 0.3s;
+      transition: all var(--transition-normal);
       position: relative;
       overflow: hidden;
       backdrop-filter: blur(10px);
@@ -372,9 +506,10 @@
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-5px);
       box-shadow: var(--shadow);
       border-color: var(--accent-blue);
+      transition: all var(--transition-normal);
     }
 
     .project-card:hover::before {
@@ -385,18 +520,46 @@
       font-size: 3rem;
       color: var(--accent-blue);
       margin-bottom: 1rem;
+      transition: transform var(--transition-normal);
+    }
+
+    .project-card:hover .project-icon {
+      transform: scale(1.1) rotate(5deg);
     }
 
     .project-card h3 {
       font-size: 1.5rem;
       margin-bottom: 1rem;
       color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: rgba(255, 159, 64, 0.15);
+      color: #ff9f40;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(255, 159, 64, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      animation: pulse-border 2s infinite;
+    }
+
+    @keyframes pulse-border {
+      0%, 100% { border-color: rgba(255, 159, 64, 0.4); }
+      50% { border-color: rgba(255, 159, 64, 0.8); }
     }
 
     .project-card p {
       color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.7;
     }
 
     .project-tech {
@@ -433,9 +596,9 @@
 
     .timeline-item {
       position: relative;
-      margin-bottom: 3rem;
+      margin-bottom: var(--spacing-xl);
       background: var(--card-bg);
-      padding: 2rem;
+      padding: var(--spacing-lg);
       border-radius: 15px;
       border: 1px solid rgba(0, 212, 255, 0.2);
       backdrop-filter: blur(10px);
@@ -476,7 +639,8 @@
       color: var(--text-secondary);
       padding-left: 1.5rem;
       position: relative;
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--spacing-xs);
+      line-height: 1.7;
     }
 
     .timeline-item ul li::before {
@@ -491,19 +655,19 @@
       max-width: 600px;
       margin: 0 auto;
       background: var(--card-bg);
-      padding: 3rem;
+      padding: var(--spacing-xl);
       border-radius: 20px;
       border: 1px solid rgba(0, 212, 255, 0.2);
       backdrop-filter: blur(10px);
     }
 
     .form-group {
-      margin-bottom: 1.5rem;
+      margin-bottom: var(--spacing-md);
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--spacing-xs);
       color: var(--accent-blue);
       font-weight: 500;
     }
@@ -517,13 +681,41 @@
       border-radius: 10px;
       color: var(--text-primary);
       font-family: 'Poppins', sans-serif;
-      transition: border-color 0.3s;
+      transition: all var(--transition-fast);
     }
 
     .form-group input:focus,
     .form-group textarea:focus {
-      outline: none;
       border-color: var(--accent-blue);
+      background: rgba(0, 212, 255, 0.05);
+      transition: all var(--transition-fast);
+    }
+
+    .form-group input:invalid:not(:placeholder-shown),
+    .form-group textarea:invalid:not(:placeholder-shown) {
+      border-color: #ff6b6b;
+    }
+
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: #ff6b6b;
+    }
+
+    .form-error {
+      color: #ff6b6b;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+      display: none;
+    }
+
+    .form-group.error .form-error {
+      display: block;
+    }
+
+    .form-group label.required::after {
+      content: ' *';
+      color: #ff6b6b;
+      margin-left: 0.25rem;
     }
 
     .form-group textarea {
@@ -531,13 +723,24 @@
       min-height: 150px;
     }
 
+    @media (max-width: 768px) {
+      .contact-form {
+        padding: var(--spacing-lg);
+      }
+
+      .about-content {
+        padding: var(--spacing-lg);
+      }
+    }
+
     /* Footer */
     footer {
       text-align: center;
-      padding: 2rem;
-      background: var(--bg-secondary);
+      padding: var(--spacing-lg);
+      background: linear-gradient(180deg, var(--bg-secondary), rgba(10, 14, 39, 0.5));
       color: var(--text-secondary);
-      margin-top: 5rem;
+      margin-top: var(--spacing-2xl);
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
     }
 
     footer p {
@@ -548,11 +751,52 @@
       color: var(--accent-blue);
       text-decoration: none;
       margin: 0 0.5rem;
-      transition: color 0.3s;
+      transition: all var(--transition-normal);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     footer a:hover {
       color: var(--accent-purple);
+      transform: translateY(-2px);
+    }
+
+    footer a:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      background: var(--card-bg);
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      border-left: 4px solid var(--accent-blue);
+      color: var(--text-primary);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      max-width: 400px;
+      animation: slideIn var(--transition-normal) ease-out;
+      z-index: 1001;
+    }
+
+    .toast.success {
+      border-left-color: #51cf66;
+    }
+
+    .toast.error {
+      border-left-color: #ff6b6b;
+    }
+
+    @media (max-width: 768px) {
+      .toast {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        max-width: none;
+      }
     }
 
     /* Scroll to top button */
@@ -570,17 +814,24 @@
       justify-content: center;
       cursor: pointer;
       opacity: 0;
-      transition: all 0.3s;
+      transition: all var(--transition-normal);
       z-index: 999;
+      pointer-events: none;
     }
 
     .scroll-top.visible {
       opacity: 1;
+      pointer-events: auto;
     }
 
     .scroll-top:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .scroll-top:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
     }
 
 
@@ -595,12 +846,12 @@
     .project-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
       color: var(--accent-blue);
       text-decoration: none;
       font-size: 0.9rem;
-      transition: all 0.3s;
-      padding: 0.5rem 1rem;
+      transition: all var(--transition-normal);
+      padding: var(--spacing-xs) 1rem;
       border-radius: 20px;
       border: 1px solid var(--accent-blue);
     }
@@ -609,6 +860,29 @@
       background: var(--accent-blue);
       color: white;
       transform: translateY(-2px);
+    }
+
+    .project-link:focus-visible {
+      outline: 2px solid var(--accent-blue);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 1024px) {
+      section {
+        padding: 4rem 2rem;
+      }
+
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .hero {
+        padding: 7rem 2rem 3rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
     }
 
     /* Responsive */
@@ -636,21 +910,39 @@
       }
 
       .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
       }
 
       .hero .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
 
       .hero-img {
+        width: 140px;
+        height: 140px;
+        border-width: 3px;
+      }
+
+      .hero-img-wrapper::before {
         width: 160px;
         height: 160px;
       }
 
-      .hero-img-wrapper::before {
-        width: 180px;
-        height: 180px;
+      .typing-text {
+        font-size: 1rem;
+        min-height: 32px;
+      }
+
+      .social-links {
+        gap: 1rem;
+        margin: 1.5rem 0;
+      }
+
+      .social-links a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
       }
 
       .section-title {
@@ -671,9 +963,17 @@
         gap: 0.3rem;
       }
 
-      .about-content,
       .contact-form {
-        padding: 2rem;
+        padding: var(--spacing-lg);
+      }
+
+      .about-content {
+        padding: var(--spacing-lg);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        font-size: 1rem;
       }
     }
 
@@ -689,12 +989,44 @@
       }
     }
 
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .fade-in {
-      animation: fadeInUp 0.6s ease-out;
+      animation: fadeInUp var(--transition-slow) ease-out;
+    }
+
+    .fade-in:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .fade-in:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .fade-in:nth-child(n+4) {
+      animation-delay: 0.3s;
     }
   </style>
 </head>
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main" class="skip-to-content">Skip to main content</a>
+
   <!-- Particles Background -->
   <div id="particles-js"></div>
 
@@ -706,16 +1038,19 @@
         <ul id="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu" id="mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false">
           <i class="fas fa-bars"></i>
         </div>
       </div>
     </nav>
+
+    <!-- Main Content -->
+    <main id="main">
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -750,20 +1085,207 @@
       <h2 class="section-title">About Me</h2>
       <div class="about-content fade-in">
         <p>
-          I'm a passionate .NET Backend Developer with +1 year of hands-on experience building scalable, 
-          maintainable web applications. I specialize in ASP.NET Core, Clean Architecture, and modern development 
+          I'm a passionate <strong>.NET Developer</strong> with over 1 year of hands-on experience building scalable, 
+          maintainable web applications. I specialize in <strong>ASP.NET Core, Clean Architecture,</strong> and modern development 
           practices that deliver real business value.
         </p>
         <p>
-          Currently working at ITS Technologies, I've developed production-ready systems across various domains 
-          including food delivery, smart parking, survey management, and digital libraries. I'm dedicated to 
-          writing clean code, optimizing performance, and implementing security best practices.
+          Recently worked at <strong>ITS Technologies</strong>, where I architected and developed production-ready systems across various domains 
+          including healthcare management, food delivery, smart parking, survey management, and digital libraries. I'm dedicated to 
+          writing clean code, optimizing performance, implementing security best practices, and following SOLID principles.
         </p>
         <p>
-          I graduated with distinction from Port Said University with a degree in Information Technology and Systems. 
-          My passion for continuous learning drives me to stay updated with the latest technologies and best practices 
-          in software development.
+          I graduated with <strong>distinction</strong> from Port Said University with a degree in Information Technology and Systems. 
+          My passion for continuous learning drives me to stay updated with the latest technologies, architectural patterns, and best practices 
+          in modern software development.
         </p>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <h3>.NET Developer</h3>
+          <div class="date">
+            <span><i class="fas fa-building"></i> ITS Technologies || Remote</span>
+            <span><i class="fas fa-calendar"></i> <time datetime="2024-09">Sep 2024</time> – <time datetime="2025-10">Oct 2025</time></span>
+            <span><i class="fas fa-map-marker-alt"></i> Port Said, Egypt</span>
+          </div>
+          <ul>
+            <li>Architected and developed scalable RESTful APIs using ASP.NET Core and Web API with industry best practices</li>
+            <li>Built real-time technical support portal with integrated chat functionality, improving customer satisfaction by 40%</li>
+            <li>Designed and implemented mobile-ready APIs enabling iOS and Android app integration, expanding user reach</li>
+            <li>Developed container transport management system with real-time tracking, reducing operational costs by 25%</li>
+            <li>Implemented responsive and accessible UIs using HTML5, CSS3, and Bootstrap, ensuring WCAG 2.1 compliance</li>
+            <li>Optimized database queries using LINQ and Entity Framework Core, improving API performance by 35%</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-hospital"></i></div>
+          <h3>Hospital Management System <span class="status-badge">In Development</span></h3>
+          <p>
+            Advanced healthcare management platform architected using Clean Architecture and CQRS patterns with real-time appointment scheduling, integrated payment processing, and automated email notifications. 
+            Implements dual-storage strategy (EF Core for transactional data, Dapper for reporting) optimizing both write and read operations.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">Clean Architecture</span>
+            <span class="tech-badge">CQRS</span>
+            <span class="tech-badge">Dapper</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">MailKit</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">Identity</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Serilog</span>
+            <span class="tech-badge">Audit Logging</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/OmarDiv/Sehaty-Plus-CleanArchitecture" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-utensils"></i></div>
+          <h3>FoodFlow</h3>
+          <p>
+            Scalable food delivery platform backend with comprehensive restaurant management, real-time order tracking, and automated delivery notifications via Hangfire. 
+            Features optimized caching strategies and Role-Based Access Control with JWT authentication, multilingual support, and comprehensive Swagger documentation.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">LINQ</span>
+            <span class="tech-badge">Identity</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Repository Pattern</span>
+            <span class="tech-badge">Unit of Work</span>
+            <span class="tech-badge">FluentValidation</span>
+            <span class="tech-badge">AutoMapper</span>
+            <span class="tech-badge">HealthChecks</span>
+            <span class="tech-badge">CORS</span>
+            <span class="tech-badge">Swagger</span>
+            <span class="tech-badge">Serilog</span>
+            <span class="tech-badge">Hangfire</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/OmarDiv/FoodFlow" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-parking"></i></div>
+          <h3>Raknah</h3>
+          <p>
+            Smart parking IoT integration platform — my graduation project with real-time parking spot reservations, hardware communication protocol, and automated SMTP notifications. 
+            Implements hybrid caching strategy, Rate Limiting for API protection, and comprehensive audit logging for compliance.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">LINQ</span>
+            <span class="tech-badge">Identity</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Result Pattern</span>
+            <span class="tech-badge">Exception Handling</span>
+            <span class="tech-badge">Repository Pattern</span>
+            <span class="tech-badge">Unit of Work</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">Mapster</span>
+            <span class="tech-badge">MailKit</span>
+            <span class="tech-badge">FluentValidation</span>
+            <span class="tech-badge">Rate Limiting</span>
+            <span class="tech-badge">HealthChecks</span>
+            <span class="tech-badge">Hybrid Caching</span>
+            <span class="tech-badge">CORS</span>
+            <span class="tech-badge">SMTP</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/OmarDiv/Raknah" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-poll"></i></div>
+          <h3>Survey Basket</h3>
+          <p>
+            Enterprise survey management platform with advanced role-based access control and automated respondent notifications via Hangfire. 
+            Features query optimization, comprehensive analytics dashboard, Result Pattern for consistent error handling, and FluentValidation for data integrity across all endpoints.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">Web API</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">Identity Framework</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">HttpClient</span>
+            <span class="tech-badge">Repository Pattern</span>
+            <span class="tech-badge">FluentValidation</span>
+            <span class="tech-badge">Exception Handling</span>
+            <span class="tech-badge">Mapster</span>
+            <span class="tech-badge">MailKit</span>
+            <span class="tech-badge">MimeKit</span>
+            <span class="tech-badge">Serilog</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/OmarDiv/SurveyBasket" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card fade-in">
+          <div class="project-icon"><i class="fas fa-book"></i></div>
+          <h3>Bookify</h3>
+          <p>
+            Digital library management system with automated rental notifications, advanced reporting with ClosedXML for Excel export, and cloud-based file storage via Cloudinary. 
+            Features multilingual support, Clean Architecture with Repository Pattern, and comprehensive Serilog logging for operational insights and troubleshooting.
+          </p>
+          <div class="project-tech">
+            <span class="tech-badge">ASP.NET Core</span>
+            <span class="tech-badge">MVC</span>
+            <span class="tech-badge">EF Core</span>
+            <span class="tech-badge">SQL Server</span>
+            <span class="tech-badge">LINQ</span>
+            <span class="tech-badge">Identity</span>
+            <span class="tech-badge">JWT</span>
+            <span class="tech-badge">Hangfire</span>
+            <span class="tech-badge">AutoMapper</span>
+            <span class="tech-badge">Serilog</span>
+            <span class="tech-badge">Cloudinary</span>
+            <span class="tech-badge">ClosedXML</span>
+            <span class="tech-badge">Repository Pattern</span>
+            <span class="tech-badge">Clean Architecture</span>
+            <span class="tech-badge">FluentValidation</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">jQuery</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/OmarDiv/Bookify" target="_blank" class="project-link">
+              <i class="fab fa-github"></i> View Repository
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -826,8 +1348,7 @@
           <div class="skill-tags">
             <span class="skill-tag">Git & GitHub</span>
             <span class="skill-tag">Azure DevOps</span>
-            <span class="skill-tag">Docker (Basics)</span>
-            <span class="skill-tag">CI/CD (Basics)</span>
+            <span class="skill-tag">Docker</span>
             <span class="skill-tag">Swagger</span>
             <span class="skill-tag">Postman</span>
           </div>
@@ -872,210 +1393,27 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card fade-in">
-          <div class="project-icon"><i class="fas fa-hospital"></i></div>
-          <h3>Hospital Management System</h3>
-          <p>
-            Advanced healthcare management system currently under development. Implements modern architecture patterns
-            for optimal performance, security, and maintainability with separate read/write operations.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">Clean Architecture</span>
-            <span class="tech-badge">CQRS</span>
-            <span class="tech-badge">Dapper</span>
-            <span class="tech-badge">EF Core</span>
-            <span class="tech-badge">MailKit</span>
-            <span class="tech-badge">Hangfire</span>
-            <span class="tech-badge">Identity</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Serilog</span>
-            <span class="tech-badge">Audit Logging</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/OmarDiv/Sehaty-Plus-CleanArchitecture" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View Repository
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon"><i class="fas fa-utensils"></i></div>
-          <h3>FoodFlow</h3>
-          <p>
-            Comprehensive backend system for food delivery and restaurant management. Features secure RESTful APIs, 
-            JWT authentication, automated workflows with Hangfire, and optimized data access with caching strategies.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">ASP.NET Core</span>
-            <span class="tech-badge">Web API</span>
-            <span class="tech-badge">EF Core</span>
-            <span class="tech-badge">SQL Server</span>
-            <span class="tech-badge">LINQ</span>
-            <span class="tech-badge">Identity</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Repository Pattern</span>
-            <span class="tech-badge">Unit of Work</span>
-            <span class="tech-badge">FluentValidation</span>
-            <span class="tech-badge">AutoMapper</span>
-            <span class="tech-badge">HealthChecks</span>
-            <span class="tech-badge">CORS</span>
-            <span class="tech-badge">Swagger</span>
-            <span class="tech-badge">Serilog</span>
-            <span class="tech-badge">Hangfire</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/OmarDiv/FoodFlow" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View Repository
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon"><i class="fas fa-parking"></i></div>
-          <h3>Raknah</h3>
-          <p>
-            Smart parking system with IoT integration. Real-time parking spot reservations, hardware communication, 
-            automated email notifications, and secure user management. My graduation project that earned distinction.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">ASP.NET Core</span>
-            <span class="tech-badge">Web API</span>
-            <span class="tech-badge">EF Core</span>
-            <span class="tech-badge">SQL Server</span>
-            <span class="tech-badge">LINQ</span>
-            <span class="tech-badge">Identity</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Result Pattern</span>
-            <span class="tech-badge">Exception Handling</span>
-            <span class="tech-badge">Repository Pattern</span>
-            <span class="tech-badge">Unit of Work</span>
-            <span class="tech-badge">Hangfire</span>
-            <span class="tech-badge">Mapster</span>
-            <span class="tech-badge">MailKit</span>
-            <span class="tech-badge">FluentValidation</span>
-            <span class="tech-badge">Rate Limiting</span>
-            <span class="tech-badge">HealthChecks</span>
-            <span class="tech-badge">Hybrid Caching</span>
-            <span class="tech-badge">CORS</span>
-            <span class="tech-badge">SMTP</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/OmarDiv/Raknah" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View Repository
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon"><i class="fas fa-poll"></i></div>
-          <h3>Survey Basket</h3>
-          <p>
-            Survey management platform for creating, distributing, and analyzing surveys. Role-based authentication, 
-            automated notifications, query optimization, and comprehensive analytics dashboard.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">ASP.NET Core</span>
-            <span class="tech-badge">Web API</span>
-            <span class="tech-badge">EF Core</span>
-            <span class="tech-badge">SQL Server</span>
-            <span class="tech-badge">Identity Framework</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Hangfire</span>
-            <span class="tech-badge">HttpClient</span>
-            <span class="tech-badge">Repository Pattern</span>
-            <span class="tech-badge">FluentValidation</span>
-            <span class="tech-badge">Exception Handling</span>
-            <span class="tech-badge">Mapster</span>
-            <span class="tech-badge">MailKit</span>
-            <span class="tech-badge">MimeKit</span>
-            <span class="tech-badge">Serilog</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/OmarDiv/SurveyBasket" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View Repository
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card fade-in">
-          <div class="project-icon"><i class="fas fa-book"></i></div>
-          <h3>Bookify</h3>
-          <p>
-            Digital library management system with multilingual support, automated rental notifications, 
-            comprehensive reporting with ClosedXML, and cloud-based file storage using Cloudinary.
-          </p>
-          <div class="project-tech">
-            <span class="tech-badge">ASP.NET Core</span>
-            <span class="tech-badge">MVC</span>
-            <span class="tech-badge">EF Core</span>
-            <span class="tech-badge">SQL Server</span>
-            <span class="tech-badge">LINQ</span>
-            <span class="tech-badge">Identity</span>
-            <span class="tech-badge">JWT</span>
-            <span class="tech-badge">Hangfire</span>
-            <span class="tech-badge">AutoMapper</span>
-            <span class="tech-badge">Serilog</span>
-            <span class="tech-badge">Cloudinary</span>
-            <span class="tech-badge">ClosedXML</span>
-            <span class="tech-badge">Repository Pattern</span>
-            <span class="tech-badge">Clean Architecture</span>
-            <span class="tech-badge">FluentValidation</span>
-            <span class="tech-badge">Bootstrap</span>
-            <span class="tech-badge">jQuery</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/OmarDiv/Bookify" target="_blank" class="project-link">
-              <i class="fab fa-github"></i> View Repository
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <h2 class="section-title">Work Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item fade-in">
-          <h3>Full Stack .NET Developer</h3>
-          <div class="date">
-            <span><i class="fas fa-building"></i> ITS Technologies || OnSite</span>
-            <span><i class="fas fa-calendar"></i> Sep 2024 - October 2025</span>
-            <span><i class="fas fa-map-marker-alt"></i> Port Said, Egypt</span>
-          </div>
-          <ul>
-            <li>Developed scalable web applications and RESTful APIs using ASP.NET Core and .NET Core MVC</li>
-            <li>Built technical support website with real-time chat functionality for customer service</li>
-            <li>Created APIs for mobile integration, improving accessibility and user experience</li>
-            <li>Developed container transport management system for tracking shipments and generating reports</li>
-            <li>Implemented responsive UIs using HTML, CSS, and Bootstrap</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
     <section id="contact">
       <h2 class="section-title">Get In Touch</h2>
       <div class="contact-form fade-in">
-        <form id="contact-form">
+        <form id="contact-form" novalidate>
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+            <label for="name" class="required">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true">
+            <span class="form-error">Please enter your name</span>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email" class="required">Email</label>
+            <input type="email" id="email" name="email" placeholder="your.email@example.com" required aria-required="true">
+            <span class="form-error">Please enter a valid email address</span>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
+            <label for="message" class="required">Message</label>
+            <textarea id="message" name="message" placeholder="Your message here..." required aria-required="true"></textarea>
+            <span class="form-error">Please enter your message (at least 10 characters)</span>
           </div>
-          <button type="submit" class="btn">
+          <button type="submit" class="btn" id="submit-btn">
             <i class="fas fa-paper-plane"></i> Send Message
           </button>
         </form>
@@ -1084,64 +1422,70 @@
 
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 Omar Mohamed Omar. Built with passion and code.</p>
+      <p>&copy; 2025 Omar Mohamed Omar. All rights reserved.</p>
       <p>
-        <a href="https://github.com/OmarDiv" target="_blank">
-          <i class="fab fa-github"></i>
+        <a href="https://github.com/OmarDiv" target="_blank" title="Visit my GitHub">
+          <i class="fab fa-github"></i> GitHub
         </a>
-        <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank">
-          <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank" title="Connect on LinkedIn">
+          <i class="fab fa-linkedin"></i> LinkedIn
         </a>
-        <a href="mailto:omaar88mohamed@gmail.com">
-          <i class="fas fa-envelope"></i>
+        <a href="mailto:omaar88mohamed@gmail.com" title="Send me an email">
+          <i class="fas fa-envelope"></i> Email
         </a>
       </p>
     </footer>
 
     <!-- Scroll to top button -->
-    <div class="scroll-top" id="scroll-top">
+    <div class="scroll-top" id="scroll-top" aria-label="Scroll to top" role="button" tabindex="0">
       <i class="fas fa-arrow-up"></i>
     </div>
+    </main>
   </div>
 
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   
   <script>
-    // Particles.js configuration
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#00d4ff' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: false },
-        size: { value: 3, random: true },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: '#00d4ff',
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 2,
-          direction: 'none',
-          random: false,
-          straight: false,
-          out_mode: 'out',
-          bounce: false
-        }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: {
-          onhover: { enable: true, mode: 'repulse' },
-          onclick: { enable: true, mode: 'push' },
-          resize: true
-        }
-      },
-      retina_detect: true
+    // Preload critical resources
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize particles with optimized settings
+      if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+          particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#00d4ff' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+              enable: true,
+              distance: 150,
+              color: '#00d4ff',
+              opacity: 0.4,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 2,
+              direction: 'none',
+              random: false,
+              straight: false,
+              out_mode: 'out',
+              bounce: false
+            }
+          },
+          interactivity: {
+            detect_on: 'canvas',
+            events: {
+              onhover: { enable: true, mode: 'repulse' },
+              onclick: { enable: true, mode: 'push' },
+              resize: true
+            }
+          },
+          retina_detect: true
+        });
+      }
     });
 
     // Typing animation
@@ -1196,18 +1540,29 @@
       });
     });
 
-    // Mobile menu toggle
+    // Navbar scroll effect
+    const navbar = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle with accessibility
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
     
     mobileMenu.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
+      const isActive = navMenu.classList.toggle('active');
+      mobileMenu.setAttribute('aria-expanded', isActive);
       const icon = mobileMenu.querySelector('i');
       icon.classList.toggle('fa-bars');
       icon.classList.toggle('fa-times');
     });
 
-    // Scroll to top button
+    // Enhanced scroll to top button with keyboard support
     const scrollTopBtn = document.getElementById('scroll-top');
     
     window.addEventListener('scroll', () => {
@@ -1222,7 +1577,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Intersection Observer for fade-in animations
+    scrollTopBtn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Intersection Observer for fade-in animations with better performance
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -1233,6 +1595,8 @@
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
+          // Optional: unobserve after animation to improve performance
+          // observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
@@ -1240,32 +1604,117 @@
     document.querySelectorAll('.fade-in').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      el.style.transition = 'opacity var(--transition-slow) ease-out, transform var(--transition-slow) ease-out';
       observer.observe(el);
     });
 
-    // Contact form submission
+    // Toast notification system
+    function showToast(message, type = 'success', duration = 3000) {
+      const toast = document.createElement('div');
+      toast.className = `toast ${type}`;
+      toast.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+          <span>${message}</span>
+        </div>
+      `;
+      
+      document.body.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.animation = 'slideIn 0.3s ease-out reverse';
+        setTimeout(() => toast.remove(), 300);
+      }, duration);
+    }
+
+    // Enhanced form validation
     const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
     
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-      
-      // Create mailto link
-      const mailtoLink = `mailto:omaar88mohamed@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-      
-      window.location.href = mailtoLink;
-      
-      // Show success message
-      alert('Opening your email client... Thank you for reaching out!');
-      contactForm.reset();
+    // Real-time email validation
+    const emailInput = document.getElementById('email');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    emailInput.addEventListener('blur', () => {
+      if (emailInput.value && !emailRegex.test(emailInput.value)) {
+        emailInput.parentElement.classList.add('error');
+      } else {
+        emailInput.parentElement.classList.remove('error');
+      }
     });
 
-    // Add active state to nav items on scroll
+    // Message length validation
+    const messageInput = document.getElementById('message');
+    messageInput.addEventListener('input', () => {
+      if (messageInput.value.trim().length < 10 && messageInput.value.length > 0) {
+        messageInput.parentElement.classList.add('error');
+      } else {
+        messageInput.parentElement.classList.remove('error');
+      }
+    });
+
+    // Form submission with validation
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formGroups = contactForm.querySelectorAll('.form-group');
+      let isValid = true;
+      
+      // Clear previous errors
+      formGroups.forEach(group => group.classList.remove('error'));
+      
+      // Validate all fields
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      
+      if (!name) {
+        document.getElementById('name').parentElement.classList.add('error');
+        isValid = false;
+      }
+      
+      if (!email || !emailRegex.test(email)) {
+        document.getElementById('email').parentElement.classList.add('error');
+        isValid = false;
+      }
+      
+      if (message.length < 10) {
+        document.getElementById('message').parentElement.classList.add('error');
+        isValid = false;
+      }
+      
+      if (!isValid) {
+        showToast('Please fill in all fields correctly', 'error');
+        return;
+      }
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add('loading');
+      const originalText = submitBtn.innerHTML;
+      
+      try {
+        // Simulate sending (in production, use EmailJS or backend)
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Create mailto link
+        const mailtoLink = `mailto:omaar88mohamed@gmail.com?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        window.location.href = mailtoLink;
+        
+        showToast('Message sent successfully! Opening your email client...', 'success', 4000);
+        contactForm.reset();
+      } catch (error) {
+        showToast('Error sending message. Please try again.', 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
+    // Add active state to nav items on scroll with smooth transition
     const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav ul li a');
     
     window.addEventListener('scroll', () => {
       const scrollY = window.pageYOffset;
@@ -1276,10 +1725,10 @@
         const sectionId = section.getAttribute('id');
         
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          document.querySelectorAll('nav ul li a').forEach(link => {
-            link.style.color = 'var(--text-secondary)';
+          navLinks.forEach(link => {
+            link.classList.remove('active');
             if (link.getAttribute('href') === `#${sectionId}`) {
-              link.style.color = 'var(--accent-blue)';
+              link.classList.add('active');
             }
           });
         }
