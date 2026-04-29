@@ -86,7 +86,6 @@
     .project-card:hover::before { transform: scaleX(1); }
     .project-icon { font-size: 3rem; color: var(--accent-blue); margin-bottom: 1rem; }
     .project-card h3 { font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
-    .status-badge { background: rgba(255, 159, 64, 0.15); color: #ff9f40; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; border: 1px solid rgba(255, 159, 64, 0.4); }
     .project-card p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7; }
     .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .tech-badge { background: rgba(179, 127, 235, 0.1); color: var(--accent-purple); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; border: 1px solid rgba(179, 127, 235, 0.3); }
@@ -203,8 +202,9 @@
               <span><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
             </div>
             <ul>
-              <li>Architected and delivered full-cycle development of UAE government platforms including Al Metsaweq, a secret shopper evaluation system used by business owners and managers to schedule, track, and assess field visits across multiple locations.</li>
-              <li>Delivered complete production-ready modules independently — owning both frontend and backend — bridging UI customization using HTML, CSS, and Bootstrap with complex business logic and RESTful API development under ASP.NET Core MVC.</li>
+              <li>Developing end-to-end ASP.NET Core MVC applications for UAE government platforms, including Fougera Club and Al Metsaweq, ensuring reliable production performance.</li>
+              <li>Executing full system implementations, bridging UI customizations (HTML, CSS, Bootstrap) with complex backend business logic and RESTful APIs.</li>
+              <li>Contributing to production maintenance and ongoing system enhancements to meet the rigorous requirements of government clients.</li>
             </ul>
           </div>
 
@@ -216,8 +216,9 @@
               <span><i class="fas fa-laptop"></i> Remote, Part-Time</span>
             </div>
             <ul>
-              <li>Engineered enterprise backend systems across Hajj management, ERP, and clinic domains on a Multi-Tenant architecture designed to serve hundreds of companies, implementing per-page Role and Permission authorization with full data isolation per tenant.</li>
-              <li>Eliminated database ID exposure across all API responses by contributing to a custom Strongly-Typed ID Encryption system with per-entity obfuscation keys, and delivered real-time data synchronization features using SignalR.</li>
+              <li>Contributed to the development of complex enterprise systems across multiple domains (Hajj management, ERP, and clinics), applying Clean Architecture and Multi-Tenant patterns.</li>
+              <li>Enhanced API security and system integrity by implementing URL ID Hashing (Hashids) and building granular, per-page Role &amp; Permission authorization.</li>
+              <li>Delivered real-time features by integrating SignalR for live data updates, while actively building independent modules to ensure clean separation of concerns.</li>
             </ul>
           </div>
 
@@ -229,8 +230,9 @@
               <span><i class="fas fa-map-marker-alt"></i> Port Said, Egypt</span>
             </div>
             <ul>
-              <li>Built and maintained customer-facing web applications and RESTful APIs serving port and logistics operations, improving accessibility for both internal staff and end customers through responsive ASP.NET MVC solutions.</li>
-              <li>Developed mobile integration APIs as part of a team, enabling field workers to interact with core business systems remotely and reducing reliance on manual, office-based processes.</li>
+              <li>Developed scalable web applications and RESTful APIs using ASP.NET Core to support core business operations.</li>
+              <li>Built a technical support portal and mobile integration APIs, which directly improved system accessibility and customer support efficiency.</li>
+              <li>Implemented responsive frontend interfaces (HTML, CSS, Bootstrap) alongside backend development to enhance the overall user experience.</li>
             </ul>
           </div>
 
@@ -244,8 +246,8 @@
 
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-hospital"></i></div>
-            <h3>Sehaty-Plus <span class="status-badge">In Development</span></h3>
-            <p>Digitized manual clinic operations into a comprehensive digital ecosystem that manages the entire patient journey, from appointment scheduling and doctor coordination to multi-clinic administrative oversight. Eliminates data privacy risks through granular permission-based authorization and optimizes high-traffic areas with Redis distributed caching.</p>
+            <h3>Sehaty-Plus</h3>
+            <p>Developed core backend workflows for patient registration and doctor onboarding, including multi-role access control and license verification. Integrated third-party services to implement secure email confirmations (MailKit) and SMS-based password recovery via OTP (Twilio). Eliminates data privacy risks through granular permission-based authorization and optimizes high-traffic areas with Redis distributed caching.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core 9</span>
               <span class="tech-badge">Clean Architecture</span>
@@ -266,7 +268,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-utensils"></i></div>
             <h3>FoodFlow</h3>
-            <p>Built a high-scale food delivery backend managing the full lifecycle from restaurant onboarding and menu management to order fulfillment, secured with custom permission-based authorization policies and domain validation guards that prevent unauthorized cross-restaurant operations. Reduced database load using .NET 9 HybridCache and integrated Geoapify for real-time reverse-geocoding.</p>
+            <p>Built secure RESTful APIs to manage the restaurant onboarding and food delivery lifecycles, with automated documentation using Swagger. Improved API reliability and performance by applying optimized data access patterns, caching strategies, and automating background tasks via Hangfire. Reduced database load using .NET 9 HybridCache and integrated Geoapify for real-time reverse-geocoding.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core 9</span>
               <span class="tech-badge">EF Core</span>
@@ -285,7 +287,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-parking"></i></div>
             <h3>Raknah — IoT Smart Parking</h3>
-            <p>Solved urban parking congestion by building an end-to-end smart parking backend that bridges physical IoT hardware with real-time reservation logic, preventing double-booking through backend concurrency guards. Automated the full reservation lifecycle by integrating MQTT with a physical ESP32 gate controller with Hangfire background jobs for reminders and auto-cancellation.</p>
+            <p>Developed the backend logic for real-time slot reservations, successfully integrating live hardware signals using MQTT. Solved double-booking issues by implementing robust concurrency handling, ensuring accurate availability updates under concurrent user load — while Hangfire background jobs send reminders 10 minutes before expiry and auto-cancel no-shows after 15 minutes.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core</span>
               <span class="tech-badge">EF Core</span>
@@ -322,7 +324,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-book"></i></div>
             <h3>Bookify</h3>
-            <p>Streamlined library operations and subscriber management by building a full-lifecycle platform using ASP.NET Core MVC with Clean Architecture. Reduced overdue rental rates through a multi-channel notification engine integrating WhatsApp and Email, secured sensitive data against ID enumeration attacks using Microsoft Data Protection, and enabled data-driven decisions via Excel and PDF exports.</p>
+            <p>Implemented a digital library backend using Clean Architecture, featuring multilingual support and automated system notifications. Secured system operations and user data by building robust authentication and authorization flows using Identity. Reduced overdue rental rates through a multi-channel notification engine integrating WhatsApp and Email, and enabled data-driven decisions via Excel and PDF exports.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core MVC</span>
               <span class="tech-badge">EF Core</span>
