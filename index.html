@@ -41,7 +41,9 @@
     }
     nav.scrolled { background: rgba(10, 14, 39, 0.98); padding: 0.75rem 0; }
     nav .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    nav .logo { display: flex; align-items: center; gap: 0.6rem; font-size: 1.3rem; font-weight: 700; }
+    nav .logo svg { width: 30px; height: 30px; display: block; }
+    nav .logo span { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     nav ul { list-style: none; display: flex; gap: 2rem; }
     nav ul li a { color: var(--text-secondary); text-decoration: none; transition: color var(--transition-normal); font-weight: 500; position: relative; }
     nav ul li a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent-blue); transition: width var(--transition-normal); }
@@ -110,6 +112,9 @@
     footer { text-align: center; padding: 2rem; background: linear-gradient(180deg, var(--bg-secondary), rgba(10, 14, 39, 0.5)); color: var(--text-secondary); margin-top: 5rem; border-top: 1px solid rgba(0, 212, 255, 0.1); }
     footer a { color: var(--accent-blue); text-decoration: none; margin: 0 0.5rem; transition: all var(--transition-normal); }
     footer a:hover { color: var(--accent-purple); }
+    .footer-signature { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; margin-top: 1.5rem; }
+    .footer-signature svg { width: 36px; height: 36px; opacity: 0.9; }
+    .footer-signature span { font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 0.3px; }
     .scroll-top { position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; background: var(--accent-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: all var(--transition-normal); z-index: 999; pointer-events: none; border: none; }
     .scroll-top.visible { opacity: 1; pointer-events: auto; }
     .scroll-top:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3); }
@@ -136,7 +141,19 @@
   <div class="content-wrapper">
     <nav>
       <div class="container">
-        <div class="logo">Omar.dev</div>
+        <div class="logo" aria-label="Omar Mohamed monogram">
+          <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="60,6 108,33 108,87 60,114 12,87 12,33" fill="none" stroke="url(#navOmGrad)" stroke-width="7"/>
+            <defs>
+              <linearGradient id="navOmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00d4ff"/>
+                <stop offset="100%" stop-color="#b37feb"/>
+              </linearGradient>
+            </defs>
+            <text x="60" y="72" text-anchor="middle" font-family="'Fira Code', monospace" font-size="44" font-weight="700" letter-spacing="-3" fill="url(#navOmGrad)">OM</text>
+          </svg>
+          <span>Omar.dev</span>
+        </div>
         <ul id="nav-menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -181,7 +198,7 @@
             A solution-oriented <strong>.NET Developer</strong> driven by a <strong>'Why before What'</strong> mindset — prioritizing the understanding of business objectives to engineer the most effective technical solutions. With <strong>2 years of experience</strong> in ASP.NET Core, I specialize in building secure, scalable systems using <strong>Clean Architecture, Modular Monolith Architecture, and CQRS</strong>, ensuring every line of code serves a clear functional purpose.
           </p>
           <p>
-            Currently working at <strong>Smart Vision</strong>, developing end-to-end ASP.NET Core MVC applications for <strong>UAE government projects</strong>, alongside resolving production security vulnerabilities and building localization/audit-logging architecture. Previously contributed to <strong>Codex Plans</strong> where I engineered enterprise multi-tenant systems spanning <strong>ERP, Legal Case Management, Real Estate, Hajj Management, and Clinic operations</strong> — designed to serve multiple companies with full data isolation per tenant.
+            Currently working at <strong>Smart Vision</strong>, developing end-to-end ASP.NET Core MVC applications for <strong>UAE government projects</strong>, alongside resolving production security vulnerabilities and building localization/audit-logging architecture. Previously contributed to <strong>Codex Plans</strong> where I engineered enterprise multi-tenant systems spanning <strong>ERP, Legal Case Management, and Real Estate</strong> — designed to serve multiple companies with full data isolation per tenant.
           </p>
           <p>
             Beyond client work, I built <strong>EShop</strong>, a Modular Monolith e-commerce backend applying Vertical Slice Architecture, Domain-Driven Design, CQRS, and the Outbox Pattern, to deepen my understanding of large-scale system design. My graduation project <strong>Raknah</strong> is a live IoT smart parking system integrating ESP32 hardware via MQTT, demonstrating the ability to bridge software with real physical systems. Graduated with <strong>Very Good</strong> from Port Said University — Information Technology and Systems.
@@ -216,7 +233,7 @@
               <span><i class="fas fa-laptop"></i> Remote, Full-Time</span>
             </div>
             <ul>
-              <li>Built backend modules and RESTful APIs for enterprise multi-tenant SaaS platforms spanning ERP, Legal Case Management, Real Estate, Hajj Management, and Clinic domains, each with isolated tenant data models.</li>
+              <li>Built backend modules and RESTful APIs for enterprise multi-tenant SaaS platforms spanning ERP, Legal Case Management, and Real Estate domains, each with isolated tenant data models.</li>
               <li>Applied Clean Architecture and SOLID principles across the codebase using EF Core, Dapper, and Mapster to keep complex business workflows testable and easy to extend.</li>
               <li>Added real-time notifications via SignalR and secured endpoints with Role &amp; Permission-based authorization plus Hashids URL obfuscation, reviewed through team code reviews before merge.</li>
             </ul>
@@ -508,6 +525,19 @@
         <a href="https://www.linkedin.com/in/omar-mohamed-mamon" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="mailto:omaar88mohamed@gmail.com"><i class="fas fa-envelope"></i> Email</a>
       </p>
+      <div class="footer-signature">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="60,6 108,33 108,87 60,114 12,87 12,33" fill="none" stroke="url(#footerOmGrad)" stroke-width="6"/>
+          <defs>
+            <linearGradient id="footerOmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#b37feb"/>
+            </linearGradient>
+          </defs>
+          <text x="60" y="72" text-anchor="middle" font-family="'Fira Code', monospace" font-size="44" font-weight="700" letter-spacing="-3" fill="url(#footerOmGrad)">OM</text>
+        </svg>
+        <span>Designed, coded &amp; signed — Omar Mohamed</span>
+      </div>
     </footer>
 
     <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
