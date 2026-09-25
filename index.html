@@ -155,16 +155,16 @@
       <section class="hero" id="home">
         <div class="hero-content fade-in">
           <div class="hero-img-wrapper">
-            <img src="WhatsApp Image 2025-12-17 at 6.11.11 PM.jpeg" alt="Omar Mohamed" class="hero-img">
+            <img src="profile.jpg" alt="Omar Mohamed" class="hero-img">
           </div>
           <h1>Omar Mohamed Omar</h1>
-          <p class="subtitle">.NET Backend Developer</p>
+          <p class="subtitle">Mid-Level .NET Developer</p>
           <div class="typing-text" id="typing-text"></div>
           <div class="social-links">
             <a href="https://github.com/OmarDiv" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/omar-mohamed-mamon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:omaar88mohamed@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/01013762770" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://wa.me/201041204519" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
           <div>
             <a href="https://flowcv.com/resume/n1comunpab" class="btn" target="_blank"><i class="fas fa-download"></i> Download CV</a>
@@ -178,13 +178,13 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content fade-in">
           <p>
-            A solution-oriented <strong>.NET Developer</strong> driven by a <strong>'Why before What'</strong> mindset — prioritizing the understanding of business objectives to engineer the most effective technical solutions. With <strong>2 years of experience</strong> in ASP.NET Core, I specialize in building secure, scalable systems using <strong>Clean Architecture and CQRS</strong>, ensuring every line of code serves a clear functional purpose.
+            A solution-oriented <strong>.NET Developer</strong> driven by a <strong>'Why before What'</strong> mindset — prioritizing the understanding of business objectives to engineer the most effective technical solutions. With <strong>2 years of experience</strong> in ASP.NET Core, I specialize in building secure, scalable systems using <strong>Clean Architecture, Modular Monolith Architecture, and CQRS</strong>, ensuring every line of code serves a clear functional purpose.
           </p>
           <p>
-            Currently working at <strong>Smart Vision</strong>, developing end-to-end ASP.NET Core MVC applications for <strong>UAE government projects</strong>. Previously contributed to <strong>Codex Plans</strong> where I engineered enterprise multi-tenant systems spanning <strong>Hajj management, ERP, and clinic operations</strong> — designed to serve hundreds of companies with full data isolation per tenant.
+            Currently working at <strong>Smart Vision</strong>, developing end-to-end ASP.NET Core MVC applications for <strong>UAE government projects</strong>, alongside resolving production security vulnerabilities and building localization/audit-logging architecture. Previously contributed to <strong>Codex Plans</strong> where I engineered enterprise multi-tenant systems spanning <strong>ERP, Legal Case Management, Real Estate, Hajj Management, and Clinic operations</strong> — designed to serve multiple companies with full data isolation per tenant.
           </p>
           <p>
-            My graduation project <strong>Raknah</strong> is a live IoT smart parking system integrating ESP32 hardware via MQTT, demonstrating the ability to bridge software with real physical systems. Graduated with <strong>Very Good</strong> from Port Said University — Information Technology and Systems.
+            Beyond client work, I built <strong>EShop</strong>, a Modular Monolith e-commerce backend applying Vertical Slice Architecture, Domain-Driven Design, CQRS, and the Outbox Pattern, to deepen my understanding of large-scale system design. My graduation project <strong>Raknah</strong> is a live IoT smart parking system integrating ESP32 hardware via MQTT, demonstrating the ability to bridge software with real physical systems. Graduated with <strong>Very Good</strong> from Port Said University — Information Technology and Systems.
           </p>
         </div>
       </section>
@@ -195,16 +195,16 @@
         <div class="timeline">
 
           <div class="timeline-item fade-in">
-            <h3>Full Stack .NET Developer</h3>
+            <h3>.NET Developer</h3>
             <div class="date">
               <span><i class="fas fa-building"></i> Smart Vision</span>
-              <span><i class="fas fa-calendar"></i> Oct 2025 – Present</span>
+              <span><i class="fas fa-calendar"></i> Jan 2026 – Present</span>
               <span><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</span>
             </div>
             <ul>
-              <li>Developing end-to-end ASP.NET Core MVC applications for UAE government platforms, including Fougera Club and Al Metsaweq, ensuring reliable production performance.</li>
-              <li>Executing full system implementations, bridging UI customizations (HTML, CSS, Bootstrap) with complex backend business logic and RESTful APIs.</li>
-              <li>Contributing to production maintenance and ongoing system enhancements to meet the rigorous requirements of government clients.</li>
+              <li>Resolved critical production security vulnerabilities, including a refresh token reuse attack and a broken access control issue caused by a missing user ID in Redis cache keys, and added JWT blacklisting on logout.</li>
+              <li>Refactored a per-action audit logging system applied across 9 controllers into a global, opt-out logging pipeline backed by a bilingual (AR/EN) operation-type lookup, and designed a localization architecture combining Redis-cached static messages with database-driven dynamic entity translations.</li>
+              <li>Built permission-based authorization per endpoint and unified error handling across the Result-pattern and exception-based paths for consistent HTTP status codes, alongside authentication workflows (including 2FA) and dashboard/reporting features for UAE government platforms.</li>
             </ul>
           </div>
 
@@ -212,27 +212,27 @@
             <h3>.NET Developer</h3>
             <div class="date">
               <span><i class="fas fa-building"></i> Codex Plans</span>
-              <span><i class="fas fa-calendar"></i> Dec 2025 – Mar 2026</span>
-              <span><i class="fas fa-laptop"></i> Remote, Part-Time</span>
+              <span><i class="fas fa-calendar"></i> Jul 2025 – Jan 2026</span>
+              <span><i class="fas fa-laptop"></i> Remote, Full-Time</span>
             </div>
             <ul>
-              <li>Contributed to the development of complex enterprise systems across multiple domains (Hajj management, ERP, and clinics), applying Clean Architecture and Multi-Tenant patterns.</li>
-              <li>Enhanced API security and system integrity by implementing URL ID Hashing (Hashids) and building granular, per-page Role &amp; Permission authorization.</li>
-              <li>Delivered real-time features by integrating SignalR for live data updates, while actively building independent modules to ensure clean separation of concerns.</li>
+              <li>Built backend modules and RESTful APIs for enterprise multi-tenant SaaS platforms spanning ERP, Legal Case Management, Real Estate, Hajj Management, and Clinic domains, each with isolated tenant data models.</li>
+              <li>Applied Clean Architecture and SOLID principles across the codebase using EF Core, Dapper, and Mapster to keep complex business workflows testable and easy to extend.</li>
+              <li>Added real-time notifications via SignalR and secured endpoints with Role &amp; Permission-based authorization plus Hashids URL obfuscation, reviewed through team code reviews before merge.</li>
             </ul>
           </div>
 
           <div class="timeline-item fade-in">
-            <h3>Full Stack .NET Developer</h3>
+            <h3>.NET Developer</h3>
             <div class="date">
               <span><i class="fas fa-building"></i> ITS Technologies</span>
-              <span><i class="fas fa-calendar"></i> Sep 2024 – Oct 2025</span>
+              <span><i class="fas fa-calendar"></i> Sep 2024 – Jul 2025</span>
               <span><i class="fas fa-map-marker-alt"></i> Port Said, Egypt</span>
             </div>
             <ul>
-              <li>Developed scalable web applications and RESTful APIs using ASP.NET Core to support core business operations.</li>
-              <li>Built a technical support portal and mobile integration APIs, which directly improved system accessibility and customer support efficiency.</li>
-              <li>Implemented responsive frontend interfaces (HTML, CSS, Bootstrap) alongside backend development to enhance the overall user experience.</li>
+              <li>Built RESTful APIs and web applications in ASP.NET Core to support core business operations for internal teams.</li>
+              <li>Delivered a technical support portal with mobile integration APIs, giving customer support staff a single point of access instead of relying on manual processes.</li>
+              <li>Implemented responsive UI with HTML, CSS, and Bootstrap alongside backend development, owning both frontend and backend of assigned features.</li>
             </ul>
           </div>
 
@@ -243,6 +243,28 @@
       <section id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
+
+          <div class="project-card fade-in">
+            <div class="project-icon"><i class="fas fa-cubes"></i></div>
+            <h3>EShop — Modular Monolith E-Commerce</h3>
+            <p>Architected a modular monolith backend (Catalog, Basket, Identity, Ordering modules) using Vertical Slice Architecture, CQRS (MediatR), and DDD, with isolated per-module database schemas to keep the codebase ready for a future microservices split. Ensured reliable cross-module messaging by implementing the Outbox Pattern with RabbitMQ/MassTransit, eliminating dual-write inconsistency risk in the Basket Checkout flow, and secured all APIs with Keycloak (OAuth2/OpenID Connect, JWT).</p>
+            <div class="project-tech">
+              <span class="tech-badge">ASP.NET Core</span>
+              <span class="tech-badge">EF Core</span>
+              <span class="tech-badge">CQRS (MediatR)</span>
+              <span class="tech-badge">PostgreSQL</span>
+              <span class="tech-badge">Redis</span>
+              <span class="tech-badge">RabbitMQ</span>
+              <span class="tech-badge">MassTransit</span>
+              <span class="tech-badge">Keycloak</span>
+              <span class="tech-badge">Serilog</span>
+              <span class="tech-badge">Seq</span>
+              <span class="tech-badge">Docker</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/OmarDiv/Eshop" target="_blank" class="project-link"><i class="fab fa-github"></i> View Repository</a>
+            </div>
+          </div>
 
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-hospital"></i></div>
@@ -268,7 +290,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-utensils"></i></div>
             <h3>FoodFlow</h3>
-            <p>Built secure RESTful APIs to manage the restaurant onboarding and food delivery lifecycles, with automated documentation using Swagger. Improved API reliability and performance by applying optimized data access patterns, caching strategies, and automating background tasks via Hangfire. Reduced database load using .NET 9 HybridCache and integrated Geoapify for real-time reverse-geocoding.</p>
+            <p>Cut manual API documentation effort by exposing RESTful APIs for restaurant onboarding and delivery lifecycles with Swagger auto-generated docs. Reduced database load and improved response times by applying .NET 9 HybridCache and optimized data access patterns, while offloading long-running tasks to background jobs via Hangfire, and integrated Geoapify for real-time reverse-geocoding.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core 9</span>
               <span class="tech-badge">EF Core</span>
@@ -287,7 +309,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-parking"></i></div>
             <h3>Raknah — IoT Smart Parking</h3>
-            <p>Developed the backend logic for real-time slot reservations, successfully integrating live hardware signals using MQTT. Solved double-booking issues by implementing robust concurrency handling, ensuring accurate availability updates under concurrent user load — while Hangfire background jobs send reminders 10 minutes before expiry and auto-cancel no-shows after 15 minutes.</p>
+            <p>Eliminated double-booking of parking slots under concurrent load by implementing robust concurrency handling on real-time reservations synced with live hardware signals via MQTT and ESP32. Reduced no-show slot waste by automating Hangfire background jobs that send expiry reminders 10 minutes before and auto-cancel unclaimed reservations after 15 minutes.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core</span>
               <span class="tech-badge">EF Core</span>
@@ -324,7 +346,7 @@
           <div class="project-card fade-in">
             <div class="project-icon"><i class="fas fa-book"></i></div>
             <h3>Bookify</h3>
-            <p>Implemented a digital library backend using Clean Architecture, featuring multilingual support and automated system notifications. Secured system operations and user data by building robust authentication and authorization flows using Identity. Reduced overdue rental rates through a multi-channel notification engine integrating WhatsApp and Email, and enabled data-driven decisions via Excel and PDF exports.</p>
+            <p>Built a maintainable digital library backend on Clean Architecture with multilingual support, cutting the cost of adding new features and languages later. Secured system operations and user data with robust ASP.NET Identity-based authentication and authorization flows, backed by automated WhatsApp notifications for subscriber lifecycle events, and enabled data-driven decisions via Excel and PDF exports.</p>
             <div class="project-tech">
               <span class="tech-badge">ASP.NET Core MVC</span>
               <span class="tech-badge">EF Core</span>
@@ -358,20 +380,12 @@
             </div>
           </div>
           <div class="skill-category fade-in">
-            <h3><i class="fas fa-database"></i> Data Access</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Entity Framework Core</span>
-              <span class="skill-tag">LINQ</span>
-              <span class="skill-tag">ADO.NET</span>
-              <span class="skill-tag">Dapper</span>
-              <span class="skill-tag">MS SQL Server</span>
-              <span class="skill-tag">MySQL</span>
-            </div>
-          </div>
-          <div class="skill-category fade-in">
-            <h3><i class="fas fa-layer-group"></i> Architecture & Patterns</h3>
+            <h3><i class="fas fa-layer-group"></i> Architecture &amp; Patterns</h3>
             <div class="skill-tags">
               <span class="skill-tag">Clean Architecture</span>
+              <span class="skill-tag">Modular Monolith Architecture</span>
+              <span class="skill-tag">Vertical Slice Architecture (VSA)</span>
+              <span class="skill-tag">Domain-Driven Design (DDD)</span>
               <span class="skill-tag">CQRS (MediatR)</span>
               <span class="skill-tag">Repository Pattern</span>
               <span class="skill-tag">Unit of Work</span>
@@ -382,11 +396,33 @@
             </div>
           </div>
           <div class="skill-category fade-in">
-            <h3><i class="fas fa-shield-alt"></i> Security & Auth</h3>
+            <h3><i class="fas fa-network-wired"></i> Messaging &amp; Events</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">RabbitMQ</span>
+              <span class="skill-tag">MassTransit</span>
+              <span class="skill-tag">Outbox Pattern</span>
+              <span class="skill-tag">Background Jobs (Hangfire)</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <h3><i class="fas fa-database"></i> Data Access</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Entity Framework Core</span>
+              <span class="skill-tag">LINQ</span>
+              <span class="skill-tag">ADO.NET</span>
+              <span class="skill-tag">Dapper</span>
+              <span class="skill-tag">MS SQL Server</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="skill-category fade-in">
+            <h3><i class="fas fa-shield-alt"></i> Security &amp; Auth</h3>
             <div class="skill-tags">
               <span class="skill-tag">Identity Framework</span>
               <span class="skill-tag">JWT</span>
               <span class="skill-tag">RefreshToken</span>
+              <span class="skill-tag">Keycloak (OAuth2/OpenID Connect)</span>
               <span class="skill-tag">Role-Based Access</span>
               <span class="skill-tag">Permission-Based Access</span>
               <span class="skill-tag">Claims-Based Auth</span>
@@ -395,7 +431,7 @@
           <div class="skill-category fade-in">
             <h3><i class="fas fa-tools"></i> Development Tools</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Git & GitHub</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
               <span class="skill-tag">Azure DevOps</span>
               <span class="skill-tag">Docker</span>
               <span class="skill-tag">Swagger</span>
@@ -410,7 +446,7 @@
             </div>
           </div>
           <div class="skill-category fade-in">
-            <h3><i class="fas fa-laptop-code"></i> Frontend & Integration</h3>
+            <h3><i class="fas fa-laptop-code"></i> Frontend &amp; Integration</h3>
             <div class="skill-tags">
               <span class="skill-tag">HTML5</span>
               <span class="skill-tag">CSS3</span>
@@ -422,8 +458,7 @@
             <h3><i class="fas fa-rocket"></i> Additional Skills</h3>
             <div class="skill-tags">
               <span class="skill-tag">Caching (In-Memory, Redis, Hybrid)</span>
-              <span class="skill-tag">Background Jobs (Hangfire)</span>
-              <span class="skill-tag">Logging (Serilog)</span>
+              <span class="skill-tag">Logging (Serilog, Seq)</span>
               <span class="skill-tag">Problem Details (RFC 7807)</span>
               <span class="skill-tag">AutoMapper</span>
               <span class="skill-tag">Mapster</span>
@@ -467,10 +502,10 @@
     </main>
 
     <footer>
-      <p>&copy; 2025 Omar Mohamed Omar. All rights reserved.</p>
+      <p>&copy; 2026 Omar Mohamed Omar. All rights reserved.</p>
       <p>
         <a href="https://github.com/OmarDiv" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/omar-mohamed-713b53265" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.linkedin.com/in/omar-mohamed-mamon" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="mailto:omaar88mohamed@gmail.com"><i class="fas fa-envelope"></i> Email</a>
       </p>
     </footer>
@@ -505,7 +540,7 @@
     });
 
     const typingText = document.getElementById('typing-text');
-    const phrases = ['Building Scalable APIs...', 'Clean Architecture Enthusiast', 'ASP.NET Core Developer', '2 Years of Experience', 'Problem Solver'];
+    const phrases = ['Building Scalable APIs...', 'Clean & Modular Architecture', 'ASP.NET Core Developer', '2 Years of Experience', 'Problem Solver'];
     let phraseIndex = 0, charIndex = 0, isDeleting = false;
     function typeEffect() {
       const currentPhrase = phrases[phraseIndex];
